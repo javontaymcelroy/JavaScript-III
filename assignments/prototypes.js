@@ -8,30 +8,39 @@
   Each constructor function has unique properties and methods that are defined in their block comments below:
 */
   
-/*
-  === GameObject ===
-  * createdAt
-  * dimensions (These represent the character's size in the video game)
-  * destroy() // prototype method -> returns the string: 'Object was removed from the game.'
-*/
 
-/*
-  === CharacterStats ===
-  * healthPoints
-  * name
-  * takeDamage() // prototype method -> returns the string '<object name> took damage.'
-  * should inherit destroy() from GameObject's prototype
-*/
+ function GameObject(attributes) {
+   this.createdAt = attributes.createdAt;
+   this.dimensions = attributes.dimensions;
 
-/*
-  === Humanoid (Having an appearance or character resembling that of a human.) ===
+ }
+  GameObject.prototype.destroy = function() {
+    console.log(`${this.name} was removed from the game.`)
+  }
+
+function CharacterStats(stats) {
+  this.healthPoints = stats.healthPoints;
+  this.name = stats.name;
+}
+
+GameObject.call(this, destroy);
+
+CharacterStats.prototype.takeDamage = function() {
+  console.log(`${this.name} took damage.`)
+}
+
+
+
+function Humanoid(humanoidAttributes) {
+  this.team =
+}
   * team
   * weapons
   * language
   * greet() // prototype method -> returns the string '<object name> offers a greeting in <object language>.'
   * should inherit destroy() from GameObject through CharacterStats
   * should inherit takeDamage() from CharacterStats
-*/
+
  
 /*
   * Inheritance chain: GameObject -> CharacterStats -> Humanoid
